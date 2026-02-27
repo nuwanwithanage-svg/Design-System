@@ -1,0 +1,35 @@
+---
+title: Radius
+description: Corner radius tokens for components, cards, and containers.
+status: stable
+order: 4
+---
+
+## Overview
+
+A consistent set of border radius values keeps the UI visually cohesive. All radii are available as Figma variables bound to the Radius collection.
+
+<TokenTable tokens={[
+  { name: "Radius/none", value: "0px",    description: "No rounding — tables, inline elements" },
+  { name: "Radius/xs",   value: "2px",    description: "Subtle rounding — badges, tooltips, code" },
+  { name: "Radius/sm",   value: "4px",    description: "Inputs, small buttons, tags" },
+  { name: "Radius/md",   value: "8px",    description: "Buttons, cards, dropdowns" },
+  { name: "Radius/lg",   value: "12px",   description: "Modals, drawers, large panels" },
+  { name: "Radius/full", value: "9999px", description: "Pills, avatars, toggle switches" }
+]} />
+
+## Component radius mapping
+
+| Component | Radius token |
+|-----------|-------------|
+| Button | `Radius/md` (8px) |
+| Input / Textarea | `Radius/sm` (4px) |
+| Badge | `Radius/xs` (2px) |
+| Card | `Radius/md` (8px) |
+| Modal | `Radius/lg` (12px) |
+| Avatar | `Radius/full` |
+| Tag / Pill | `Radius/full` |
+
+<Callout type="warning" title="Consistency rule">
+Always use a token — never write `border-radius: 6px` or other arbitrary values not in the scale.
+</Callout>

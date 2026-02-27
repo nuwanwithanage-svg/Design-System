@@ -1,0 +1,61 @@
+---
+title: Typography
+description: Font families, size scale, weights, line heights, and semantic text styles.
+status: stable
+order: 2
+---
+
+## Overview
+
+The type system uses **Inter** as the primary UI font, with **JetBrains Mono** for code. All type decisions are captured as tokens and bound to Figma text styles.
+
+## Font families
+
+<TokenTable tokens={[
+  { name: "primitive/typography/font/family/primary", value: "Inter", description: "All UI text" },
+  { name: "primitive/typography/font/family/mono", value: "JetBrains Mono", description: "Code, technical content" }
+]} />
+
+## Size scale
+
+<TokenTable tokens={[
+  { name: "primitive/typography/size/12", value: "12px", description: "Caption, badge labels" },
+  { name: "primitive/typography/size/14", value: "14px", description: "Body SM, label" },
+  { name: "primitive/typography/size/16", value: "16px", description: "Body default, button LG" },
+  { name: "primitive/typography/size/18", value: "18px", description: "Lead body" },
+  { name: "primitive/typography/size/20", value: "20px", description: "Heading SM" },
+  { name: "primitive/typography/size/24", value: "24px", description: "Heading MD, Price LG" },
+  { name: "primitive/typography/size/28", value: "28px", description: "Heading LG" },
+  { name: "primitive/typography/size/32", value: "32px", description: "Heading XL" }
+]} />
+
+## Semantic text styles
+
+16 text styles are available in Figma, all fully bound to token variables.
+
+| Style | Size | Weight | Line height | Letter spacing |
+|-------|------|--------|-------------|----------------|
+| Heading/XL | 32px | Semi Bold | 40px | 0 |
+| Heading/LG | 28px | Semi Bold | 32px | -1% |
+| Heading/MD | 24px | Semi Bold | 32px | -1% |
+| Heading/SM | 20px | Semi Bold | 28px | 0 |
+| Body/LG | 16px | Regular | 24px | 0 |
+| Body/MD | 14px | Regular | 20px | 0 |
+| Body/SM | 12px | Regular | 16px | 0 |
+| Label/MD | 14px | Medium | 20px | 0 |
+| Label/SM | 12px | Medium | 16px | 0 |
+| Button/SM | 14px | Medium | 20px | 0 |
+| Button/MD | 14px | Medium | 20px | 0 |
+| Button/LG | 16px | Medium | 24px | 0 |
+| Caption | 12px | Regular | 16px | 0 |
+| Price/LG | 24px | Semi Bold | 32px | -1% |
+| Price/MD | 20px | Semi Bold | 28px | -1% |
+| Price/SM | 16px | Semi Bold | 24px | -1% |
+
+## Letter spacing
+
+<TokenTable tokens={[
+  { name: "primitive/typography/letterspacing/tight", value: "-1%", description: "Headings LG, MD; Price styles" },
+  { name: "primitive/typography/letterspacing/normal", value: "0", description: "Default for all body text" },
+  { name: "primitive/typography/letterspacing/wide", value: "2%", description: "Uppercase labels" }
+]} />

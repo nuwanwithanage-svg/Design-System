@@ -1,0 +1,79 @@
+---
+title: Colors
+description: The colour system — primitives, semantic tokens, and usage guidance.
+status: stable
+order: 1
+---
+
+## Overview
+
+The colour system is built on two layers:
+
+- **7 primitive palettes** — Red, Orange, Yellow, Dark Cyan, Green, Blue, Greyscale + Black/White
+- **59 semantic tokens** — organized across 6 groups: Background, Text, Border, Icon, Focus, Input
+
+<Callout type="info" title="Always use semantic tokens">
+Use `background/brand/primary` in components, never `dark-cyan/80` directly. Semantic tokens communicate **intent** and allow global theme changes without touching components.
+</Callout>
+
+## Brand palette (Dark Cyan)
+
+The primary brand colour is **Dark Cyan** — a teal-green hue used for key actions, focus rings, and brand moments.
+
+<TokenTable tokens={[
+  { name: "dark-cyan/10", value: "#f3fffc", description: "Subtle tint, hover states" },
+  { name: "dark-cyan/20", value: "#d0fff6", description: "" },
+  { name: "dark-cyan/30", value: "#acffef", description: "Focus ring colour" },
+  { name: "dark-cyan/40", value: "#85f6e0", description: "" },
+  { name: "dark-cyan/50", value: "#6cd9c4", description: "" },
+  { name: "dark-cyan/60", value: "#56bca8", description: "" },
+  { name: "dark-cyan/70", value: "#429f8d", description: "" },
+  { name: "dark-cyan/80", value: "#318272", description: "Background/brand/primary" },
+  { name: "dark-cyan/90", value: "#226558", description: "Background/brand/hover" },
+  { name: "dark-cyan/100", value: "#15483e", description: "Background/brand/pressed" }
+]} />
+
+## Greyscale
+
+Used for text, borders, backgrounds, and all neutral UI elements.
+
+<TokenTable tokens={[
+  { name: "greyscale/10", value: "#f5f5f5", description: "Background/subtle" },
+  { name: "greyscale/20", value: "#e1e1e1", description: "Background/muted, border/disabled" },
+  { name: "greyscale/30", value: "#cccccc", description: "Border/Default" },
+  { name: "greyscale/40", value: "#b8b8b8", description: "" },
+  { name: "greyscale/50", value: "#a3a3a3", description: "Border/strong, text/placeholder" },
+  { name: "greyscale/60", value: "#8f8f8f", description: "Text/placeholder, text/disabled" },
+  { name: "greyscale/70", value: "#7b7b7b", description: "Text/tertiary, icon/secondary" },
+  { name: "greyscale/80", value: "#656566", description: "" },
+  { name: "greyscale/90", value: "#4f5052", description: "Text/secondary" },
+  { name: "greyscale/100", value: "#3b3b3d", description: "Text/primary" }
+]} />
+
+## Semantic tokens — Background
+
+<TokenTable tokens={[
+  { name: "background/page", value: "#ffffff", description: "Page background" },
+  { name: "background/surface", value: "#ffffff", description: "Card, panel surfaces" },
+  { name: "background/subtle", value: "#f5f5f5", description: "Subtle tinted backgrounds" },
+  { name: "background/muted", value: "#e1e1e1", description: "Disabled states" },
+  { name: "background/brand/primary", value: "#318272", description: "Primary CTA background" },
+  { name: "background/brand/hover", value: "#226558", description: "CTA hover state" },
+  { name: "background/state/error/bold", value: "#bc1700", description: "Destructive button" },
+  { name: "background/state/success/bold", value: "#318272", description: "Success state" }
+]} />
+
+## Do / Don't
+
+**Do** — use semantic tokens in components:
+
+```css
+background-color: var(--color-background-brand-primary);
+```
+
+**Don't** — use primitive tokens directly in components:
+
+```css
+/* Incorrect — do not use primitive tokens in components */
+background-color: var(--color-dark-cyan-80);
+```

@@ -1,0 +1,49 @@
+---
+title: Design Principles
+description: The guiding values behind every decision in this design system.
+status: stable
+order: 2
+---
+
+## Our principles
+
+These principles guide every decision — from token naming to component API design.
+
+### 1. Clarity over cleverness
+
+Every component, token name, and pattern should be immediately understandable. Avoid abbreviations, obscure naming, or "magic" behavior that requires documentation to understand.
+
+### 2. Accessible by default
+
+Accessibility is not an afterthought. Every component ships with:
+
+- Semantic HTML
+- Keyboard navigation support
+- Focus-visible rings
+- ARIA attributes where required
+- Sufficient color contrast (WCAG AA minimum)
+
+### 3. Token-driven consistency
+
+No hardcoded values. Every color, spacing value, radius, or shadow must reference a token. This ensures changes propagate correctly system-wide.
+
+<Callout type="warning" title="Avoid hardcoding">
+Never write `color: #2dd4bf` in component code. Always use `var(--color-background-brand-primary)` or the equivalent token reference.
+</Callout>
+
+### 4. Composition over configuration
+
+Prefer composing simple components over adding complexity to a single component. A `Button` with an icon is better built by composing `Button` + `Icon` than by adding an `icon` prop with complex behavior.
+
+### 5. Progressive disclosure
+
+Show what's needed, hide what's not. Components should work out of the box with sensible defaults, with additional props available for customization when required.
+
+### 6. B2B context
+
+This system is built for enterprise B2B products — information-dense, task-focused, and used for extended sessions. Design choices reflect this:
+
+- High information density is acceptable
+- Muted, calm color palette reduces fatigue
+- Typography optimized for reading speed
+- Minimal animation to avoid distraction

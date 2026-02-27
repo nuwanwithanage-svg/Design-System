@@ -1,0 +1,79 @@
+---
+title: Input
+description: Single-line text input for forms, search, and data entry.
+status: stable
+order: 3
+---
+
+## Overview
+
+The Input component captures single-line text. It supports 2 sizes, 6 interactive states, and 3 affix configurations — 36 variants total.
+
+## When to use
+
+- Capturing short text (name, email, search query)
+- Any single-line data entry in a form
+
+## When not to use
+
+- Multi-line text — use [Textarea](/docs/components/textarea) instead
+- Selecting from a list — use a Select or Combobox
+
+## Anatomy
+
+1. **Container** — frame with background, border, corner radius
+2. **Placeholder text** — hint shown when empty
+3. **Value text** — user-entered content
+4. **Leading icon** — optional icon (left side)
+5. **Trailing icon** — optional icon (right side, e.g. clear button, unit)
+6. **Focus ring** — shadow effect on focus
+
+## Sizes
+
+| Size | Height | PaddingH | Gap |
+|------|--------|----------|-----|
+| `sm` | 32px | 12px (spacing/4) | 8px (spacing/3) |
+| `md` | 40px | 16px (spacing/5) | 8px (spacing/3) |
+
+## States
+
+| State | Background | Border | Text |
+|-------|-----------|--------|------|
+| `default` | `input/background/default` | `input/border/Default` | `input/text/placeholder` |
+| `hover` | `input/background/default` | `input/border/hover` | `input/text/placeholder` |
+| `focus` | `input/background/default` | `input/border/focus` | `input/text/value` |
+| `error` | `input/background/default` | `input/border/error` | `input/text/value` |
+| `disabled` | `input/background/disabled` | `input/border/disabled` | `input/text/disabled` |
+| `readonly` | `input/background/disabled` | `input/border/Default` | `input/text/value` |
+
+## Affix configurations
+
+| Affix | Description |
+|-------|-------------|
+| `none` | Plain input, no icons |
+| `leading-icon` | Icon on the left (e.g. search, user) |
+| `trailing-icon` | Icon on the right (e.g. clear, eye toggle) |
+
+## Accessibility
+
+- Always pair an input with a visible `<label>`
+- Use `aria-describedby` to link error messages
+- Error state must not rely on color alone — include an error icon or message
+- `readonly` inputs must communicate their state (not just visual muting)
+
+## Tokens applied
+
+<TokenTable tokens={[
+  { name: "input/background/default", value: "#ffffff", description: "Default input background" },
+  { name: "input/background/disabled", value: "#e1e1e1", description: "Disabled/readonly background" },
+  { name: "input/border/Default", value: "#cccccc", description: "Default border" },
+  { name: "input/border/hover", value: "#a3a3a3", description: "Hover border" },
+  { name: "input/border/focus", value: "#318272", description: "Focus border (brand)" },
+  { name: "input/border/error", value: "#bc1700", description: "Error border" },
+  { name: "input/border/disabled", value: "#e1e1e1", description: "Disabled border" },
+  { name: "input/text/value", value: "#3b3b3d", description: "Entered value text" },
+  { name: "input/text/placeholder", value: "#8f8f8f", description: "Placeholder text" },
+  { name: "input/text/disabled", value: "#8f8f8f", description: "Disabled text" },
+  { name: "Radius/sm", value: "4px", description: "Corner radius" },
+  { name: "Stroke width/sm", value: "1px", description: "Border width" }
+]} />

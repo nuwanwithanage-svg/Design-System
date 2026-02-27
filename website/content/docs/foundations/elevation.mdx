@@ -1,0 +1,37 @@
+---
+title: Elevation
+description: Shadow tokens for creating depth and visual hierarchy.
+status: stable
+order: 5
+---
+
+## Overview
+
+Elevation uses box shadows to convey depth. Use elevation purposefully — only when a component needs to appear above its surroundings.
+
+<TokenTable tokens={[
+  { name: "Shadows/sm", value: "0 2px 8px rgba(0,0,0,0.06)",      description: "Cards, subtle lift" },
+  { name: "Shadows/md", value: "0 8px 24px -4px rgba(0,0,0,0.12)", description: "Dropdowns, popovers" },
+  { name: "Shadows/lg", value: "0 6px 30px 5px rgba(0,0,0,0.13)",  description: "Modals, dialogs" }
+]} />
+
+## Focus shadow
+
+The focus ring is implemented as a `DROP_SHADOW` effect:
+
+<TokenTable tokens={[
+  { name: "focus/Ring",      value: "dark-cyan/30 (#acffef), spread: 3px, offset: 0", description: "Default focus ring" },
+  { name: "focus/ringError", value: "red/30 (#ffa193), spread: 3px, offset: 0",       description: "Error state focus ring" }
+]} />
+
+## Usage guidance
+
+| Level | Use for |
+|-------|---------|
+| `sm` | Cards, image thumbnails, subtle floating elements |
+| `md` | Dropdowns, select menus, date pickers, tooltips |
+| `lg` | Modals, side sheets, dialogs |
+
+<Callout type="info" title="Dark mode shadows">
+Shadows appear at reduced opacity in dark mode. Increase shadow spread slightly or use border + shadow combos for better visibility.
+</Callout>

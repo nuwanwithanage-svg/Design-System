@@ -1,0 +1,52 @@
+---
+title: Textarea
+description: Multi-line text input for longer form content, descriptions, and notes.
+status: stable
+order: 4
+---
+
+## Overview
+
+Textarea is the multi-line variant of Input. It shares the same token system and states but grows vertically to accommodate longer text. 12 variants total (2 sizes × 6 states).
+
+## When to use
+
+- Descriptions, notes, or messages (multi-line)
+- Any text input where the user may write more than one sentence
+
+## When not to use
+
+- Short, single-line inputs — use [Input](/docs/components/input) instead
+
+## Sizes
+
+| Size | Height | PaddingH | PaddingV |
+|------|--------|----------|----------|
+| `sm` | 80px | 12px (spacing/4) | 8px (spacing/3) |
+| `md` | 120px | 16px (spacing/5) | 12px (spacing/4) |
+
+## States
+
+Same 6 states as Input: default, hover, focus, error, disabled, readonly.
+
+The focus state shows the teal focus ring (DROP_SHADOW, spread 3px, `focus/Ring` colour).
+
+## Accessibility
+
+- Include a `<label>` linked via `for`/`id`
+- Set `rows` attribute to hint expected content length
+- Consider `maxlength` + a character counter for limited inputs
+- Avoid disabling resize unless layout requires it
+
+## Tokens applied
+
+<TokenTable tokens={[
+  { name: "input/background/default", value: "#ffffff", description: "Default background" },
+  { name: "input/background/disabled", value: "#e1e1e1", description: "Disabled/readonly background" },
+  { name: "input/border/focus", value: "#318272", description: "Focus border" },
+  { name: "input/border/error", value: "#bc1700", description: "Error border" },
+  { name: "Radius/sm", value: "4px", description: "Corner radius" },
+  { name: "Stroke width/sm", value: "1px", description: "Border width" },
+  { name: "primitive/spacing/4", value: "12px", description: "paddingV SM" },
+  { name: "primitive/spacing/5", value: "16px", description: "paddingH MD" }
+]} />

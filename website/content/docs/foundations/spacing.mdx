@@ -1,0 +1,43 @@
+---
+title: Spacing
+description: The spacing scale — primitives and semantic spacing tokens for padding, gaps, and layout.
+status: stable
+order: 3
+---
+
+## Overview
+
+The spacing system uses a named numeric scale from 0–11, covering 0px to 64px. Semantic aliases group these into meaningful categories.
+
+## Primitive scale
+
+<TokenTable tokens={[
+  { name: "primitive/spacing/0",  value: "0px",  description: "No spacing" },
+  { name: "primitive/spacing/1",  value: "2px",  description: "Micro gap" },
+  { name: "primitive/spacing/2",  value: "4px",  description: "XS — tight gaps" },
+  { name: "primitive/spacing/3",  value: "8px",  description: "SM — icon padding, small gaps" },
+  { name: "primitive/spacing/4",  value: "12px", description: "MD — component padding SM" },
+  { name: "primitive/spacing/5",  value: "16px", description: "LG — component padding MD" },
+  { name: "primitive/spacing/6",  value: "20px", description: "XL — component padding LG" },
+  { name: "primitive/spacing/7",  value: "24px", description: "2XL — section gap SM" },
+  { name: "primitive/spacing/8",  value: "32px", description: "3XL — section gap MD" },
+  { name: "primitive/spacing/9",  value: "40px", description: "4XL — section gap LG" },
+  { name: "primitive/spacing/10", value: "48px", description: "5XL — layout gap" },
+  { name: "primitive/spacing/11", value: "64px", description: "6XL — layout gap XL" }
+]} />
+
+## Usage guidance
+
+Use spacing tokens for all padding, margin, and gap values. Do not use arbitrary pixel values.
+
+```css
+/* Correct */
+padding: var(--spacing-4); /* 12px */
+gap: var(--spacing-3);     /* 8px */
+```
+
+<Callout type="info" title="Component padding reference">
+- **SM components** (h=32px): paddingH = spacing/4 (12px)
+- **MD components** (h=40px): paddingH = spacing/5 (16px)
+- **LG components** (h=48px): paddingH = spacing/6 (20px)
+</Callout>

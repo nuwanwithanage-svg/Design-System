@@ -1,0 +1,35 @@
+---
+title: Components Overview
+description: All available components and their current status.
+status: stable
+order: 1
+---
+
+## Component library
+
+Components are built on semantic tokens and follow the design principles of accessibility-first, composable architecture.
+
+| Component | Status | Variants |
+|-----------|--------|----------|
+| Button | Stable | 576 variants (4 types × 3 sizes × 6 states × 4 icons × 2 widths) |
+| Input | Stable | 36 variants (2 sizes × 6 states × 3 affix) |
+| Textarea | Stable | 12 variants (2 sizes × 6 states) |
+
+## Design principles for components
+
+Every component in this system follows these rules:
+
+1. **Uses semantic tokens only** — no hardcoded hex values or pixel dimensions
+2. **Covers all interactive states** — default, hover, focus, error, disabled
+3. **Keyboard accessible** — full navigation without a mouse
+4. **Documented with examples** — usage, anatomy, do/don't
+
+## Accessing components in Figma
+
+All components are available in the Design System Figma file.
+
+Use **Components panel** (Shift+I) to browse and insert components. Swap variants using the **Variant picker** in the Design panel on the right.
+
+<Callout type="info" title="Token binding">
+All component fills, strokes, corner radii, padding, and gaps are bound to Figma variables. Switching themes will update all components automatically.
+</Callout>

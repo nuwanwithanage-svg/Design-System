@@ -1,0 +1,64 @@
+---
+title: Contribution Workflow
+description: How to propose, review, and ship changes to the design system.
+status: stable
+order: 4
+---
+
+## Contribution process
+
+All changes to the design system follow a structured review process to maintain quality and consistency.
+
+## 1. Propose a change
+
+Open a GitHub issue using the appropriate template:
+
+- **New component** — for net-new UI components
+- **Token change** — for adding, modifying, or deprecating tokens
+- **Bug report** — for existing component defects
+- **Documentation** — for doc improvements
+
+## 2. Design review
+
+For new components or significant changes:
+
+1. Create a Figma proposal in the Design System file
+2. Share the frame link in your GitHub issue
+3. Get sign-off from a design system maintainer
+
+## 3. Implementation
+
+Fork the repo and create a branch:
+
+```bash
+git checkout -b feat/component-name
+```
+
+Follow the existing patterns:
+- Use semantic tokens only (no hardcoded values)
+- Add MDX documentation alongside the component
+- Include all required states (default, hover, focus, error, disabled)
+- Ensure keyboard accessibility
+
+## 4. Documentation
+
+Every component ships with documentation. Use the component template and fill in:
+
+- Overview + when to use / not to use
+- Anatomy
+- Variants and states
+- Accessibility notes
+- Code example
+
+## 5. Review + merge
+
+Open a PR against `main`. A maintainer will review for:
+
+- Token usage correctness
+- Accessibility compliance
+- Documentation completeness
+- Visual consistency
+
+<Callout type="success" title="Versioning">
+We follow semantic versioning. Breaking changes bump the major version, new additions bump minor, fixes bump patch.
+</Callout>

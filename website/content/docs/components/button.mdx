@@ -1,0 +1,86 @@
+---
+title: Button
+description: Buttons trigger actions. Use them to submit forms, navigate, or initiate workflows.
+status: stable
+order: 2
+---
+
+## Overview
+
+Buttons are the primary interaction element in the design system. They come in 4 types, 3 sizes, 6 states, and 4 icon configurations — 576 variants in total.
+
+## When to use
+
+- Submitting a form
+- Triggering a primary action (save, create, confirm)
+- Navigation where link styling isn't appropriate
+
+## When not to use
+
+- For navigation between pages — use a link instead
+- For toggle behavior — use a Toggle or Checkbox
+- When the action is destructive but not the primary action — consider a secondary or tertiary button
+
+## Anatomy
+
+1. **Container** — the clickable frame with background, border, and corner radius
+2. **Label** — the button text (required)
+3. **Leading icon** — optional icon before the label
+4. **Trailing icon** — optional icon after the label
+5. **Focus ring** — a `DROP_SHADOW` effect on focus state
+
+## Variants
+
+### By type
+
+| Type | Token | Use case |
+|------|-------|---------|
+| `primary` | `background/brand/primary` | Main CTA, one per screen |
+| `secondary` | `border/Default` | Secondary actions |
+| `tertiary` | transparent | Tertiary, low-emphasis actions |
+| `destructive` | `background/state/error/bold` | Irreversible, dangerous actions |
+
+### By size
+
+| Size | Height | H.Padding | Font |
+|------|--------|-----------|------|
+| `sm` | 32px | 12px (spacing/4) | Button/SM (14px) |
+| `md` | 40px | 16px (spacing/5) | Button/MD (14px) |
+| `lg` | 48px | 20px (spacing/6) | Button/LG (16px) |
+
+## States
+
+| State | Visual |
+|-------|--------|
+| `default` | Resting state |
+| `hover` | Darkened background |
+| `pressed` | Further darkened |
+| `focus` | Focus ring shadow (teal, spread 3px) |
+| `disabled` | `background/muted`, `text/disabled` |
+| `loading` | Spinner icon, same as disabled appearance |
+
+## Accessibility
+
+- Use a descriptive label — not "Click here" or "Submit"
+- Icon-only buttons must have an `aria-label`
+- Disabled buttons should still be focusable in some contexts (inform users why it's disabled)
+- Focus ring must be visible at all zoom levels
+
+## Tokens applied
+
+<TokenTable tokens={[
+  { name: "background/brand/primary", value: "#318272", description: "Primary button background" },
+  { name: "background/muted", value: "#e1e1e1", description: "Disabled background" },
+  { name: "text/inverse", value: "#ffffff", description: "Primary button text" },
+  { name: "text/disabled", value: "#8f8f8f", description: "Disabled text" },
+  { name: "border/Default", value: "#cccccc", description: "Secondary button border" },
+  { name: "focus/Ring", value: "#acffef", description: "Focus shadow colour" },
+  { name: "Radius/md", value: "8px", description: "Corner radius" }
+]} />
+
+## Content guidelines
+
+- Keep labels short — 1–3 words
+- Use sentence case, not ALL CAPS
+- Primary button label should match the action it performs: "Save changes", "Create account"
+- Avoid vague labels like "OK" or "Yes"

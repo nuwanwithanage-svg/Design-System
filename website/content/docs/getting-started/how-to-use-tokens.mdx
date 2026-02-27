@@ -1,0 +1,63 @@
+---
+title: How to Use Tokens
+description: Learn how to reference, apply, and override design tokens in your projects.
+status: stable
+order: 3
+---
+
+## Token architecture
+
+Tokens are organized in two layers:
+
+| Layer | Purpose | Example |
+|-------|---------|---------|
+| **Primitives** | Raw values — the palette | `dark-cyan/80 = #315e59` |
+| **Semantic** | Purpose-driven aliases | `background/brand/primary = {dark-cyan/80}` |
+
+**Always use semantic tokens** in components. Primitives exist only to feed semantic tokens — never reference them in UI code.
+
+## In Figma
+
+1. Install the [Tokens Studio plugin](https://tokens.studio/)
+2. Import `tokens/tokens.updated.json` from this repository
+3. Apply tokens to layers via the Tokens Studio panel
+
+The token file contains both `Primitives` and `Semantic_colour` sets. Enable both in Tokens Studio.
+
+## In CSS / Style Dictionary
+
+Run Style Dictionary to generate platform-specific outputs:
+
+```bash
+npx style-dictionary build
+```
+
+This outputs CSS custom properties, JS/TS constants, and Swift color assets.
+
+```css
+/* Generated CSS variables (example) */
+:root {
+  --color-background-brand-primary: #315e59;
+  --color-text-primary: #3b3b3d;
+  --color-border-default: #cccccc;
+  --spacing-inline-md: 12px;
+  --radius-sm: 4px;
+}
+```
+
+## Naming convention
+
+Token names use `/` as a separator and follow this pattern:
+
+```
+{category}/{sub-category}/{variant}
+```
+
+**Examples:**
+- `background/brand/primary` — background colour, brand category, primary variant
+- `input/border/focus` — input-specific border, focus state
+- `text/placeholder` — text colour for placeholder content
+
+<Callout type="info" title="Casing matters">
+Some tokens use capital first letters for legacy reasons: `border/Default`, `icon/Primary`, `focus/Ring`. Match exact casing when referencing tokens.
+</Callout>
